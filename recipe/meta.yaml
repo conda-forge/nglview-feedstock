@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
-{% set version = "0.6.2.2" %}
-{% set sha256 = "229be256a87cbfae8ff85b2b73b070299359af54a7f3cfc01c0c2705d127f5f0" %}
+{% set version = "0.6.2.3" %}
+{% set sha256 = "e32bd25a10e5e1c9df29ee576fad31c1daa0595d5480793298abdb961fa1a52d" %}
 {% set minimum_ipywidgets_version = "5.2.2" %}
 
 package:
@@ -23,7 +23,7 @@ requirements:
   run:
     - python
     - numpy
-    - ipywidgets >={{ minimum_ipywidgets_version }},<6
+    - ipywidgets >={{ minimum_ipywidgets_version }}
     - notebook
 
 test:
