@@ -1,8 +1,7 @@
 {% set name = "nglview" %}
-{% set version = "0.6.2.3" %}
-{% set sha256 = "e32bd25a10e5e1c9df29ee576fad31c1daa0595d5480793298abdb961fa1a52d" %}
-{% set minimum_ipywidgets_version = "5.2.2" %}
-
+{% set version = "1.0" %}
+{% set sha256 = "407a3edb9c0f59a660cd9e77e6f342809b568549dde5cd45d2cfbfe37376732c" %}
+{% set minimum_ipywidgets_version = "7" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -13,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --conda --single-version-externally-managed --record record.txt
 
 requirements:
@@ -23,7 +22,7 @@ requirements:
   run:
     - python
     - numpy
-    - ipywidgets >={{ minimum_ipywidgets_version }},<6
+    - ipywidgets >={{ minimum_ipywidgets_version }}
     - notebook
 
 test:
