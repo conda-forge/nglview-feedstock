@@ -12,8 +12,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   script: python setup.py install --conda --single-version-externally-managed --record record.txt
+# we can not use noarch, because pre/post-link scripts for install/uninstall of nbwidgets are not avail then.
+#  noarch: python
 
 requirements:
   build:
@@ -22,7 +24,8 @@ requirements:
   run:
     - python
     - numpy
-    - ipywidgets >={{ minimum_ipywidgets_version }}
+    # TODO: version 1.0 of nglview pins to the exact version, remove this constraint in future.
+    - ipywidgets =={{ minimum_ipywidgets_version }}
     - notebook
     # TODO: unpin after https://github.com/arose/nglview/issues/726 has been fixed/released.
     - ipykernel <4.7
