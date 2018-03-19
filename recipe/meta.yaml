@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
-{% set version = "1.0" %}
-{% set sha256 = "407a3edb9c0f59a660cd9e77e6f342809b568549dde5cd45d2cfbfe37376732c" %}
+{% set version = "1.1.1" %}
+{% set sha256 = "c93024a909e28fa1015f6274d4b56c51198102eecf70ee94c76bf9250e9c18f1" %}
 {% set minimum_ipywidgets_version = "7" %}
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 0
   script: python setup.py install --conda --single-version-externally-managed --record record.txt
 # we can not use noarch, because pre/post-link scripts for install/uninstall of nbwidgets are not avail then.
 #  noarch: python
