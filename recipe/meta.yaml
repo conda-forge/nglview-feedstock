@@ -1,7 +1,7 @@
 {% set name = "nglview" %}
 {% set version = "1.1.3" %}
 {% set sha256 = "7923009420dd6876b5f6d5c9cf13012e7840d187254668ddaf3b63692a6b85d1" %}
-{% set minimum_ipywidgets_version = "7" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -12,28 +12,22 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --conda --single-version-externally-managed --record record.txt
-# we can not use noarch, because pre/post-link scripts for install/uninstall of nbwidgets are not avail then.
-#  noarch: python
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed --install-option="--conda" .
+  noarch: python
 
 requirements:
   build:
-    - python
-    - setuptools
+    - pip
   run:
     - python
     - numpy
-    - ipywidgets >={{ minimum_ipywidgets_version }}
+    - ipywidgets >=7
     - notebook
-    - ipykernel
-    # nglview wants ~=3.0.0 (eg. a patch release of 3.0 major)
-    - widgetsnbextension <3.1,>3.0
 
 test:
   imports:
     - nglview 
-    - notebook
 
 about:
   home: http://github.com/arose/nglview
