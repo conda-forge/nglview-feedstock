@@ -13,12 +13,18 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed --install-option="--conda" .
+  script: |
+     python -m pip install --no-deps --ignore-installed --install-option="--conda" . ;
+     jupyter-nbextension install nglview --py --sys-prefix ;
+     jupyter-nbextension enable nglview --py --sys-prefix
   noarch: python
 
 requirements:
   build:
-    - pip
+    - python
+    - numpy
+    - ipywidgets >=7
+    - notebook
   run:
     - python
     - numpy
