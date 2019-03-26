@@ -7,18 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed --install-option="--conda" .
+  number: 1
+  script: |
+     python -m pip install --no-deps --ignore-installed --install-option="--conda" . ;
+     jupyter-nbextension install nglview --py --sys-prefix ;
+     jupyter-nbextension enable nglview --py --sys-prefix
   noarch: python
 
 requirements:
   build:
+    - python
     - pip
+    - numpy
+    - ipywidgets >=7
+    - notebook
   run:
     - python
     - numpy
