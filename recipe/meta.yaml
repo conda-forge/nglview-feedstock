@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
-{% set version = "1.1.9" %}
-{% set sha256 = "bf61e3e1ec641cee8d59891e23b8ee7f198ed8826a3ce6e5a2318530ff974d18" %}
+{% set version = "1.2.0" %}
+{% set sha256 = "19956518e355826e07a6a0b1553ce9b81d6825e52a399a51adf0a8c5f9965b25" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: |
      python -m pip install --no-deps --ignore-installed --install-option="--conda" . ;
      jupyter-nbextension install nglview --py --sys-prefix ;
