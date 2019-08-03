@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
-{% set version = "2.6.8" %}
-{% set sha256 = "02890db9b87539a216ca42f0ce06161cb428528ef24f005391da2ae40dbe4049" %}
+{% set version = "2.6.9" %}
+{% set sha256 = "8cf244be872075739ea6ab17b1e6c7e4dcc74bca1805cdef8762346c932a1697" %}
 
 package:
   name: {{ name|lower }}
