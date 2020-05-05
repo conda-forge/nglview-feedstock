@@ -11,15 +11,12 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: |
-    python -m pip install --no-deps --ignore-installed --install-option="--conda" . ;
-    jupyter-nbextension install nglview --py --sys-prefix ;
-    jupyter-nbextension enable nglview --py --sys-prefix
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
-  build:
+  host:
     - python >=3
     - pip
     - numpy
