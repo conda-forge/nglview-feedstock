@@ -1,36 +1,43 @@
 {% set name = "nglview" %}
-{% set version = "2.7.7" %}
-{% set sha256 = "fd84e20f0c1e183f2c429509c4a64b226e8591253545358062f48f3ec7dafddb" %}
+{% set version = "2.7.7.dev0" %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/ericpre/nglview/archive/refs/heads/master.zip
+  sha256: dd16527c49e67cdd53b345768da2ba421a04d5cdfd85d1e373260482baa566fd
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
+  number: {{ build_number }}
 
 requirements:
   host:
-    - python >=3
+    - ipywidgets >=7
+    - jupyterlab
+    - jupyterlab_widgets
+    - jupyter-packaging
+    - nodejs
+    - notebook
+    - numpy
     - pip
-    - numpy
-    - ipywidgets >=7
-    - notebook
+    - python >=3.6
   run:
-    - python >=3
-    - numpy
     - ipywidgets >=7
-    - notebook
+    - python >=3.6
+    - numpy
 
 test:
+  requires:
+    - jupyterlab
+    - notebook
   imports:
     - nglview
+  commands:
+    - jupyter labextension list 2>&1 | grep -ie "nglview-js-widgets.*OK"
 
 about:
   home: http://github.com/arose/nglview
