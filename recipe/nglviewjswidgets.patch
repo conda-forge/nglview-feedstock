@@ -1,0 +1,21 @@
+From 6dd7221884b13883fc0101adfe4e944b38e90012 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Wed, 7 Apr 2021 20:46:07 +0200
+Subject: [PATCH] Update Version to 2.8.7
+
+---
+ js/package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/js/package.json b/js/package.json
+index 0270b389..eef533da 100644
+--- a/js/package.json
++++ b/js/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "nglview-js-widgets",
+-  "version": "2.7.7",
++  "version": "2.7.8",
+   "description": "nglview-js-widgets",
+   "keywords": [
+     "ipython",
