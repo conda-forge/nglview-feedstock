@@ -36,11 +36,13 @@ test:
   requires:
     - jupyterlab
     - notebook
+    - pip
   imports:
     - nglview
-    - nglview-js-widgets
+    - nglview_js_widgets
   commands:
     - jupyter labextension list 2>&1 | grep -ie "nglview-js-widgets.*OK"
+    - pip check
 
 about:
   home: http://github.com/arose/nglview
