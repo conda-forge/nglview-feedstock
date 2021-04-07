@@ -1,0 +1,8 @@
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+numpy:
+- '1.17'
+target_platform:
+- win-64

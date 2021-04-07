@@ -17,11 +17,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4551&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nglview-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4551&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nglview-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4551&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nglview-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4551&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nglview-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4551&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nglview-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -32,6 +65,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-nglview-green.svg)](https://anaconda.org/conda-forge/nglview) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nglview.svg)](https://anaconda.org/conda-forge/nglview) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nglview.svg)](https://anaconda.org/conda-forge/nglview) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nglview.svg)](https://anaconda.org/conda-forge/nglview) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-nglview--js--widgets-green.svg)](https://anaconda.org/conda-forge/nglview-js-widgets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nglview-js-widgets.svg)](https://anaconda.org/conda-forge/nglview-js-widgets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nglview-js-widgets.svg)](https://anaconda.org/conda-forge/nglview-js-widgets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nglview-js-widgets.svg)](https://anaconda.org/conda-forge/nglview-js-widgets) |
 
 Installing nglview
 ==================
@@ -42,10 +76,10 @@ Installing `nglview` from the `conda-forge` channel can be achieved by adding `c
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `nglview` can be installed with:
+Once the `conda-forge` channel has been enabled, `nglview, nglview-js-widgets` can be installed with:
 
 ```
-conda install nglview
+conda install nglview nglview-js-widgets
 ```
 
 It is possible to list all of the versions of `nglview` available on your platform with:
