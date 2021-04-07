@@ -17,15 +17,15 @@ build:
 
 requirements:
   host:
+    - python >=3.6
+    - pip
+    - numpy
     - ipywidgets >=7
     - jupyterlab
     - jupyterlab_widgets
     - jupyter-packaging
     - nodejs
     - notebook
-    - numpy
-    - pip
-    - python >=3.6
   run:
     - ipywidgets >=7
     - python >=3.6
