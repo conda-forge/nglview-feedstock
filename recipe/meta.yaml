@@ -14,32 +14,51 @@ build:
   number: 0
   noarch: python
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-    - numpy
-    - ipywidgets >=7
-    - jupyterlab
-    - jupyterlab_widgets
-    - jupyter-packaging
-    - nodejs
-    - notebook
-  run:
-    - python >=3.6
-    - numpy
-    - ipywidgets >=7
-    - notebook
-    - jupyterlab_widgets
+outputs:
+  - name: nglview
+    script: build_base.sh 
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+        - numpy
+        - ipywidgets >=7
+        - notebook
+      run:
+        - python >=3.6
+        - numpy
+        - ipywidgets >=7
+        - notebook
+    test:
+      imports:
+        - nglview
 
-test:
-  requires:
-    - jupyterlab
-    - notebook
-  imports:
-    - nglview
-  commands:
-    - jupyter labextension list 2>&1 | grep -ie "nglview-js-widgets.*OK"
+  - name: nglview-js-widgets
+    script: build_widget.sh 
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+        - numpy
+        - ipywidgets >=7
+        - jupyterlab
+        - jupyterlab_widgets
+        - jupyter-packaging
+        - nodejs
+        - notebook
+      run:
+        - python >=3.6
+        - numpy
+        - ipywidgets >=7
+        - notebook
+        - jupyterlab_widgets
+        - {{ pin_subpackage('nglview', max_pin="x.x.x.x") }}
+    test:
+      requires:
+        - jupyterlab
+        - notebook
+      commands:
+        - jupyter labextension list 2>&1 | grep -ie "nglview-js-widgets.*OK"
 
 about:
   home: http://github.com/arose/nglview
