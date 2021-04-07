@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
 {% set version = "2.7.8" %}
-{% set build_number = 2 %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name|lower }}
