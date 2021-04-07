@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/nglviewer/nglview/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - nglviewjswidgets.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
