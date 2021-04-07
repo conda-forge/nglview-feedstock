@@ -30,6 +30,7 @@ requirements:
     - numpy
     - ipywidgets >=7
     - notebook
+    - jupyterlab_widgets
 
 test:
   requires:
