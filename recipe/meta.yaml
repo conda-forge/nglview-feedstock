@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  ur: https://github.com/nglviewer/nglview/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/nglviewer/nglview/archive/refs/tags/v{{ version }}.tar.gz
   sha256: dd16527c49e67cdd53b345768da2ba421a04d5cdfd85d1e373260482baa566fd
 
 build:
