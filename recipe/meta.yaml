@@ -2,7 +2,6 @@
 {% set version = "2.7.8" %}
 {% set sha256 = "fd84e20f0c1e183f2c429509c4a64b226e8591253545358062f48f3ec7dafddb" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -27,9 +26,9 @@ requirements:
     - nodejs
     - notebook
   run:
-    - ipywidgets >=7
     - python >=3.6
     - numpy
+    - ipywidgets >=7
 
 test:
   requires:
