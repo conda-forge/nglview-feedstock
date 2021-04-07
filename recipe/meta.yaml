@@ -38,6 +38,7 @@ test:
     - notebook
   imports:
     - nglview
+    - nglview-js-widgets
   commands:
     - jupyter labextension list 2>&1 | grep -ie "nglview-js-widgets.*OK"
 
