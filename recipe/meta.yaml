@@ -21,16 +21,13 @@ requirements:
     - pip
     - numpy
     - ipywidgets >=7
-    - jupyterlab
     - jupyterlab_widgets
     - jupyter-packaging
     - nodejs
-    - notebook
   run:
     - python >=3.6
     - numpy
     - ipywidgets >=7
-    - notebook
     - jupyterlab_widgets
 
 test:
