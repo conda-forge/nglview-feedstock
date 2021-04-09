@@ -20,8 +20,6 @@ requirements:
     - python >=3.6
     - pip
     - numpy
-    - ipywidgets >=7
-    - jupyterlab_widgets
     - jupyter-packaging
     - nodejs
   run:
