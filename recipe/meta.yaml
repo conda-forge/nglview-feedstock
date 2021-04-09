@@ -1,6 +1,6 @@
 {% set name = "nglview" %}
-{% set version = "2.7.8" %}
-{% set sha256 = "47eb30bac596911211c847460e2457c7d4829f80d7a203550c67c4a3b16707a9" %}
+{% set version = "3.0.0" %}
+{% set sha256 = "de0d2e075519a8849f2511aa381100263b646aea3472cb785c33813b5d0f650d" %}
 
 package:
   name: {{ name|lower }}
@@ -13,23 +13,19 @@ source:
 build:
   number: 0
   noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - python >=3.6
     - pip
     - numpy
-    - ipywidgets >=7
-    - jupyterlab
-    - jupyterlab_widgets
     - jupyter-packaging
     - nodejs
-    - notebook
   run:
     - python >=3.6
     - numpy
     - ipywidgets >=7
-    - notebook
     - jupyterlab_widgets
 
 test:
