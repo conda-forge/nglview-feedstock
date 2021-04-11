@@ -13,10 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: |
-    python -m pip install . --no-deps --ignore-installed;
-    jupyter-nbextension install nglview --py --sys-prefix ;
-    jupyter-nbextension enable nglview --py --sys-prefix
+  script: python -m pip install . --no-deps --ignore-installed
 
 requirements:
   host:
@@ -27,6 +24,7 @@ requirements:
     - versioneer-518
     - nodejs
     - notebook
+    - ipywidgets >=7
   run:
     - python >=3.6
     - numpy
