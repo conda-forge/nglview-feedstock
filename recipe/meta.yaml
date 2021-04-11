@@ -1,19 +1,22 @@
 {% set name = "nglview" %}
 {% set version = "3.0.1" %}
-{% set sha256 = "845115a126f1a95c4c8907289566d8f47fbee6898a20c71255f601173cf0f553" %}
+{% set sha256 = "6c4380979afbc6dfba0223820dd8e144d5abe3f0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/nglviewer/nglview/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: |
+    python -m pip install . --no-deps --ignore-installed;
+    jupyter-nbextension install nglview --py --sys-prefix ;
+    jupyter-nbextension enable nglview --py --sys-prefix
 
 requirements:
   host:
@@ -22,6 +25,7 @@ requirements:
     - numpy
     - jupyter-packaging
     - nodejs
+    - notebook
   run:
     - python >=3.6
     - numpy
