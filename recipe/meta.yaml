@@ -24,6 +24,7 @@ requirements:
     - pip
     - numpy
     - jupyter-packaging
+    - versioneer-518
     - nodejs
     - notebook
   run:
