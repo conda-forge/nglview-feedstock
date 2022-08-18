@@ -24,11 +24,11 @@ requirements:
     - versioneer-518
     - nodejs
     - notebook
-    - ipywidgets >=7
+    - ipywidgets >=7,<8
   run:
     - python >=3.6
     - numpy
-    - ipywidgets >=7
+    - ipywidgets >=7,<8
     - jupyterlab_widgets
 
 test:
