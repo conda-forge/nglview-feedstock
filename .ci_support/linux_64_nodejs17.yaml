@@ -9,4 +9,4 @@ docker_image:
 nodejs:
 - '17'
 numpy:
-- '1.19'
+- '1.21'
