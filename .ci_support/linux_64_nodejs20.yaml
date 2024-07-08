@@ -1,5 +1,5 @@
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -9,4 +9,4 @@ docker_image:
 nodejs:
 - '20'
 numpy:
-- '1.23'
+- '1.26'
