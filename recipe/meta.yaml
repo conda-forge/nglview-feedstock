@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . --no-deps --ignore-installed
 
@@ -23,12 +23,13 @@ requirements:
     - jupyter-packaging
     - versioneer-518
     - nodejs
-    - notebook
-    - ipywidgets >=7
+    - notebook >=7
+    - ipywidgets >=8
   run:
     - python >=3.6
     - numpy
-    - ipywidgets >=7
+    - ipywidgets >=8
+    - notebook >=7
     - jupyterlab_widgets
 
 test:
