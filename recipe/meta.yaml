@@ -1,17 +1,17 @@
 {% set name = "nglview" %}
-{% set version = "3.1.2" %}
-{% set sha256 = "7f672efa2b6ca0db34de968e5b5766b14b1b3dade212d2f8a083c600a11345ce" %}
+{% set version = "3.1.4" %}
+{% set sha256 = "e12b725c92add01174a933899db84bd63beba266d8fa9c3d2926ea453fa0829d" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python -m pip install . --no-deps --ignore-installed
 
