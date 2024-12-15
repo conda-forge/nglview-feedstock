@@ -11,13 +11,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . --no-deps --ignore-installed
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - numpy
     - jupyter-packaging
@@ -26,7 +26,7 @@ requirements:
     - notebook >=7
     - ipywidgets >=8
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - ipywidgets >=8
     - notebook >=7
@@ -37,6 +37,7 @@ test:
     - jupyterlab
     - notebook
     - pip
+    - python {{ python_min }}
   imports:
     - nglview
   commands:
