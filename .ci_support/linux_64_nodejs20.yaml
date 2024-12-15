@@ -10,3 +10,5 @@ nodejs:
 - '20'
 numpy:
 - '1.26'
+python_min:
+- '3.9'
