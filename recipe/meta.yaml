@@ -22,7 +22,7 @@ requirements:
     - pip
     - numpy
     - jupyter-packaging
-    - versioneer-518
+    - setuptools_scm
     - nodejs
     - notebook >=7
     - ipywidgets >=8
@@ -39,6 +39,7 @@ test:
     - jupyterlab
     - notebook
     - pip
+    - numpy <2.3
   imports:
     - nglview
   commands:
