@@ -17,7 +17,7 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >={{ python_min }}
     - pip
     - numpy
     - jupyter-packaging
@@ -26,7 +26,7 @@ requirements:
     - notebook >=7
     - ipywidgets >=8
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - ipywidgets >=8
     - notebook >=7
